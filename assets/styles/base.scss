@@ -39,7 +39,15 @@ $grayscale: (
 	--yellow: #ffd400;
 	--green: #0ade71;
 	--neutral-green: #33a853;
+	--self: #8d0d19;
 	--purple: #5856de;
+	--pale-purple: rgba(108, 17, 255);
+	--pale-purple-light: rgba(108, 17, 255, 10%);
+	--pale-purple-medium: rgba(108, 17, 255, 25%);
+	--pale-purple-dark: rgba(108, 17, 255, 50%);
+	--pale-green: #33a853;
+	--pale-pink: #f5bed3;
+	--pale-gray: #252641;
 
 	/* Grayscale */
 	@each $gray, $value in $grayscale {
@@ -64,10 +72,10 @@ $grayscale: (
 	--feed-background: rgba(0, 0, 0, 8%);
 	--notification-background: rgba(0, 0, 0, 95%);
 	--block-progress-background: rgba(0, 0, 0, 20%);
-	--block-progress-fill-background: #33a853;
+	--block-progress-fill-background: #6c11ff;
 	--logo-name: var(--txt-primary);
 	--bar-fill: rgb(243, 147, 45);
-	--validator-active: #85f891;
+	--validator-active: rgba(108, 17, 255);
 	--validator-inactive: #65c7f8;
 	--validator-jailed: #f8774a;
 	--supply: #65c7f8;
@@ -95,7 +103,7 @@ $grayscale: (
 	--txt-white: rgba(255, 255, 255, 95%);
 
 	/* General */
-	--brand: #924dff;
+	--brand: #6c11ff;
 	--blue: #0b84fe;
 	--red: #eb5757;
 	--orange: #ff5a17;
@@ -103,7 +111,15 @@ $grayscale: (
 	--yellow: #ffd400;
 	--green: #0ade71;
 	--neutral-green: #33a853;
+	--self: #8d0d19;
 	--purple: #5856de;
+	--pale-purple: rgba(108, 17, 255);
+	--pale-purple-light: rgba(108, 17, 255, 50%);
+	--pale-purple-medium: rgba(108, 17, 255, 25%);
+	--pale-purple-dark: rgba(108, 17, 255, 10%);
+	--pale-green: #b75bef;
+	--pale-pink: #f5bed3;
+	--pale-gray: #252641;
 
 	/* Grayscale */
 	@each $gray, $value in $grayscale {
@@ -125,7 +141,7 @@ $grayscale: (
 	--feed-background: rgba(0, 0, 0, 8%);
 	--notification-background: rgba(0, 0, 0, 95%);
 	--block-progress-background: rgba(0, 0, 0, 20%);
-	--block-progress-fill-background: #33a853;
+	--block-progress-fill-background: #6c11ff;
 	--logo-name: var(--txt-primary);
 	--bar-fill: rgb(243, 147, 45);
 }
@@ -160,6 +176,14 @@ $grayscale: (
 	--green: #26c071;
 	--neutral-green: #33a853;
 	--purple: #5856de;
+	--self: #8d0d19;
+	--pale-purple: rgba(108, 17, 255);
+	--pale-purple-light: rgba(108, 17, 255, 10%);
+	--pale-purple-medium: rgba(108, 17, 255, 25%);
+	--pale-purple-dark: rgba(108, 17, 255, 50%);
+	--pale-green: #b75bef;
+	--pale-pink: #f5bed3;
+	--pale-gray: #252641;
 
 	/* Grayscale */
 	@each $gray, $value in $grayscale {
@@ -181,7 +205,7 @@ $grayscale: (
 	--feed-background: rgba(0, 0, 0, 2%);
 	--notification-background: rgba(255, 255, 255, 95%);
 	--block-progress-background: rgba(0, 0, 0, 8%);
-	--block-progress-fill-background: #33a853;
+	--block-progress-fill-background: #6c11ff;
 	--logo-name: var(--txt-primary);
 	--bar-fill: rgb(243, 147, 45);
 }
@@ -251,9 +275,6 @@ body {
 *::-webkit-scrollbar {
 	width: 4px;
 	height: 4px;
-}
-
-*::-webkit-scrollbar-track {
 }
 
 *::-webkit-scrollbar-thumb {

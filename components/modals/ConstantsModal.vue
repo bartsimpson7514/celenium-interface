@@ -116,7 +116,7 @@ const handleCopy = (target) => {
 		<Flex direction="column" gap="24">
 			<Text size="14" weight="600" color="primary">Celestia Constants</Text>
 
-			<Input v-model="searchTerm" placeholder="Search through celestia constants" />
+			<Input v-model="searchTerm" placeholder="Search through selfchain constants" />
 
 			<Flex direction="column" gap="12" :class="$style.constants">
 				<Flex v-for="mod in filteredModules" direction="column" gap="12" :class="$style.module">

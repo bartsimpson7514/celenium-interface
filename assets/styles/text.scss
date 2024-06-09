@@ -65,6 +65,14 @@ $textColors: (
 	"red": "--red",
 	"yellow": "--yellow",
 	"purple": "--purple",
+	"self": "--self",
+	"pale-purple": "--pale-purple",
+	"pale-purple-light": "--pale-purple-light",
+	"pale-purple-medium": "--pale-purple-medium",
+	"pale-purple-dark": "--pale-purple-dark",
+	"pale-green": "--pale-green",
+	"pale-pink": "--pale-pink",
+	"pale-gray": "--pale-gray",
 );
 
 @each $key, $value in $textColors {

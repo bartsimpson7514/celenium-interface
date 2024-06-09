@@ -104,7 +104,7 @@ const calculateOpacity = (val) => {
 					<Flex
 						:class="[$style.day, day?.value > 0 && $style.shadow]"
 						:style="{
-							background: parseInt(day?.value) > 0 ? `rgb(10, 219, 111)` : 'var(--op-10)',
+							background: parseInt(day?.value) > 0 ? `var(--pale-purple)` : 'var(--op-10)',
 							opacity: calculateOpacity(day?.value),
 						}"
 					/>
@@ -151,7 +151,7 @@ const calculateOpacity = (val) => {
 }
 
 .day.shadow {
-	box-shadow: 0 0 6px rgba(10, 222, 112, 80%);
+	box-shadow: 0 0 6px var(--pale-purple-10);
 }
 
 .days {

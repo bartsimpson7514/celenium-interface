@@ -29,7 +29,6 @@ watch(
 		}
 	},
 )
-
 </script>
 
 <template>
@@ -87,7 +86,7 @@ watch(
 
 			<Flex align="center">
 				<Text size="12" weight="600" color="secondary"> {{ capitilize(commitment.contract.network) }} </Text>
-			</Flex> 
+			</Flex>
 
 			<Flex direction="column" align="center" gap="12">
 				<Flex align="center" justify="between" wide :class="$style.metadata">
@@ -233,14 +232,13 @@ watch(
 }
 
 .divider {
-	width: fill-available;
+	width: stretch;
 	height: 2px;
 
 	background: var(--op-5);
 
 	margin: 0 -16px;
 }
-
 
 @media (max-width: 550px) {
 	.metadata {

@@ -34,7 +34,7 @@ defineOgImage({
 })
 
 useHead({
-	title: `Namespace ${getNamespaceID(namespace.value?.namespace_id)} - Celestia Explorer`,
+	title: `Namespace ${getNamespaceID(namespace.value?.namespace_id)} - Selfchain Explorer`,
 	link: [
 		{
 			rel: "canonical",
@@ -48,7 +48,7 @@ useHead({
 		},
 		{
 			property: "og:title",
-			content: `Namespace ${getNamespaceID(namespace.value?.namespace_id)} - Celestia Explorer`,
+			content: `Namespace ${getNamespaceID(namespace.value?.namespace_id)} - Selfchain Explorer`,
 		},
 		{
 			property: "og:description",
@@ -64,7 +64,7 @@ useHead({
 		},
 		{
 			name: "twitter:title",
-			content: `Namespace ${getNamespaceID(namespace.value?.namespace_id)} - Celestia Explorer`,
+			content: `Namespace ${getNamespaceID(namespace.value?.namespace_id)} - Selfchain Explorer`,
 		},
 		{
 			name: "twitter:description",

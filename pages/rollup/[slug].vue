@@ -34,7 +34,7 @@ defineOgImage({
 })
 
 useHead({
-	title: `Rollup ${rollup.value?.name} - Celestia Explorer`,
+	title: `Rollup ${rollup.value?.name} - Selfchain Explorer`,
 	link: [
 		{
 			rel: "canonical",
@@ -48,7 +48,7 @@ useHead({
 		},
 		{
 			property: "og:title",
-			content: `Rollup ${rollup.value?.name} - Celestia Explorer`,
+			content: `Rollup ${rollup.value?.name} - Selfchain Explorer`,
 		},
 		{
 			property: "og:description",
@@ -64,7 +64,7 @@ useHead({
 		},
 		{
 			name: "twitter:title",
-			content: `Rollup ${rollup.value?.name} - Celestia Explorer`,
+			content: `Rollup ${rollup.value?.name} - Selfchain Explorer`,
 		},
 		{
 			name: "twitter:description",
@@ -95,7 +95,7 @@ useHead({
 					<Icon name="rollup-plus" size="12" color="secondary" /> Rollup Registration
 				</Button>
 			</Flex>
-			
+
 			<RollupOverview v-if="rollup" :rollup="rollup" />
 		</Flex>
 

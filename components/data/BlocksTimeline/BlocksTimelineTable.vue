@@ -123,11 +123,11 @@ watch(
 		const data = await fetchBlockBlobs({ height: preview.block.height })
 		let namespaces = []
 
-		data.forEach(blob => {
+		data.forEach((blob) => {
 			namespaces.push(blob.namespace)
-		});
+		})
 
-		preview.namespaces = Array.from(new Map(namespaces.map(item => [item.id, item])).values());
+		preview.namespaces = Array.from(new Map(namespaces.map((item) => [item.id, item])).values())
 		preview.isLoadingNamespaces = false
 	},
 )
@@ -296,7 +296,10 @@ watch(
 								</td>
 								<td>
 									<Flex align="center" gap="4">
-										<AmountInCurrency :amount="{ value: block.stats.fee, decimal: 6 }" :styles="{ amount: { size: '13' } }" />
+										<AmountInCurrency
+											:amount="{ value: block.stats.fee, decimal: 6 }"
+											:styles="{ amount: { size: '13' } }"
+										/>
 									</Flex>
 								</td>
 							</tr>
@@ -365,9 +368,7 @@ watch(
 								</NuxtLink>
 
 								<Flex align="center" gap="6">
-									<Text size="12" weight="600" color="tertiary">{{
-										shortHex(preview.block.proposer.cons_address)
-									}}</Text>
+									<Text size="12" weight="600" color="tertiary">{{ shortHex(preview.block.proposer.cons_address) }}</Text>
 
 									<CopyButton :text="preview.block.proposer.cons_address" size="10" />
 								</Flex>
@@ -509,7 +510,10 @@ watch(
 						</Flex>
 						<Flex align="center" justify="between">
 							<Text size="12" weight="600" color="tertiary"> Total Fees </Text>
-							<AmountInCurrency :amount="{ value: preview.block.stats.fee, decimal: 6 }" :styles="{ amount: { color: 'secondary' }, currency: { color: 'secondary' } }" />
+							<AmountInCurrency
+								:amount="{ value: preview.block.stats.fee, decimal: 6 }"
+								:styles="{ amount: { color: 'secondary' }, currency: { color: 'secondary' } }"
+							/>
 						</Flex>
 					</Flex>
 				</Flex>
@@ -629,7 +633,7 @@ watch(
 
 			white-space: nowrap;
 			overflow: hidden;
-      		text-overflow: ellipsis;
+			text-overflow: ellipsis;
 
 			border-right: 2px solid transparent;
 

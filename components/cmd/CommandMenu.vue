@@ -305,7 +305,7 @@ const rawQuickCommandsActions = [
 	{
 		type: "callback",
 		icon: "coins",
-		title: "Send TIA",
+		title: "Send SLF",
 		subtitle: "Command",
 		runText: "Send via Keplr",
 

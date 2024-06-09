@@ -40,7 +40,7 @@ defineOgImage({
 })
 
 useHead({
-	title: `Block ${comma(block.value?.height)} - Celestia Explorer`,
+	title: `Block ${comma(block.value?.height)} - Selfchain Explorer`,
 	link: [
 		{
 			rel: "canonical",
@@ -54,7 +54,7 @@ useHead({
 		},
 		{
 			property: "og:title",
-			content: `Block ${comma(block.value?.height)} - Celestia Explorer`,
+			content: `Block ${comma(block.value?.height)} - Selfchain Explorer`,
 		},
 		{
 			property: "og:description",
@@ -70,7 +70,7 @@ useHead({
 		},
 		{
 			name: "twitter:title",
-			content: `Block ${comma(block.value?.height)} - Celestia Explorer`,
+			content: `Block ${comma(block.value?.height)} - Selfchain Explorer`,
 		},
 		{
 			name: "twitter:description",

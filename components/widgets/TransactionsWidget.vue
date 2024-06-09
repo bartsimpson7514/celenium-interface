@@ -109,7 +109,7 @@ const getSectorName = (item) => {
 							</Flex>
 						</template>
 					</Tooltip>
-					
+
 					<Skeleton v-else w="36" h="16" />
 				</Flex>
 			</Flex>
@@ -249,7 +249,7 @@ const getSectorName = (item) => {
 	background: var(--txt-tertiary);
 
 	&.green {
-		background: var(--green);
+		background: var(--pale-purple-dark);
 	}
 }
 

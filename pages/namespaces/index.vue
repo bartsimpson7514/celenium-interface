@@ -13,11 +13,11 @@ import { space, formatBytes, comma, getNamespaceID } from "@/services/utils"
 import { fetchNamespaces, fetchNamespacesCount } from "@/services/api/namespace"
 
 useHead({
-	title: "Namespaces - Celestia Explorer",
+	title: "Namespaces - Selfchain Explorer",
 	link: [
 		{
 			rel: "canonical",
-			href: "https://celenium.io/namespaces",
+			href: "https://selfchain.xyz/namespaces",
 		},
 	],
 	meta: [
@@ -27,7 +27,7 @@ useHead({
 		},
 		{
 			property: "og:title",
-			content: "Namespaces - Celestia Explorer",
+			content: "Namespaces - Selfchain Explorer",
 		},
 		{
 			property: "og:description",
@@ -35,7 +35,7 @@ useHead({
 		},
 		{
 			property: "og:url",
-			content: `https://celenium.io/namespaces`,
+			content: `https://selfchain.xyz/namespaces`,
 		},
 		{
 			property: "og:image",
@@ -43,7 +43,7 @@ useHead({
 		},
 		{
 			name: "twitter:title",
-			content: "Namespaces - Celestia Explorer",
+			content: "Namespaces - Selfchain Explorer",
 		},
 		{
 			name: "twitter:description",
@@ -55,7 +55,7 @@ useHead({
 		},
 		{
 			name: "twitter:image",
-			content: "https://celenium.io/img/seo/namespaces.png",
+			content: "https://selfchain.xyz/img/seo/namespaces.png",
 		},
 	],
 })

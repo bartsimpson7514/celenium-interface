@@ -30,7 +30,7 @@ defineOgImage({
 })
 
 useHead({
-	title: `Transaction ${tx.value?.hash.toUpperCase().slice(0, 4)} ••• ${tx.value?.hash.toUpperCase().slice(-4)} - Celestia Explorer`,
+	title: `Transaction ${tx.value?.hash.toUpperCase().slice(0, 4)} ••• ${tx.value?.hash.toUpperCase().slice(-4)} - Selfchain Explorer`,
 	link: [
 		{
 			rel: "canonical",
@@ -48,7 +48,7 @@ useHead({
 			property: "og:title",
 			content: `Transaction ${tx.value?.hash.toUpperCase().slice(0, 4)} ••• ${tx.value?.hash
 				.toUpperCase()
-				.slice(-4)} - Celestia Explorer`,
+				.slice(-4)} - Selfchain Explorer`,
 		},
 		{
 			property: "og:description",
@@ -68,7 +68,7 @@ useHead({
 			name: "twitter:title",
 			content: `Transaction ${tx.value?.hash.toUpperCase().slice(0, 4)} ••• ${tx.value?.hash
 				.toUpperCase()
-				.slice(-4)} - Celestia Explorer`,
+				.slice(-4)} - Selfchain Explorer`,
 		},
 		{
 			name: "twitter:description",

@@ -32,7 +32,7 @@ defineOgImage({
 })
 
 useHead({
-	title: `Address ${address.value?.hash} - Celestia Explorer`,
+	title: `Address ${address.value?.hash} - Selfchain Explorer`,
 	link: [
 		{
 			rel: "canonical",
@@ -46,7 +46,7 @@ useHead({
 		},
 		{
 			property: "og:title",
-			content: `Address ${address.value?.hash} - Celestia Explorer`,
+			content: `Address ${address.value?.hash} - Selfchain Explorer`,
 		},
 		{
 			property: "og:description",
@@ -62,7 +62,7 @@ useHead({
 		},
 		{
 			name: "twitter:title",
-			content: `Address ${address.value?.hash} - Celestia Explorer`,
+			content: `Address ${address.value?.hash} - Selfchain Explorer`,
 		},
 		{
 			name: "twitter:description",

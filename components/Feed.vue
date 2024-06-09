@@ -31,16 +31,16 @@ const price = reactive({
 })
 
 onMounted(async () => {
-	const dataSeries = await fetchPriceSeries( {from: parseInt(DateTime.now().minus({ days: 3 }).ts / 1_000)})
+	const dataSeries = await fetchPriceSeries({ from: parseInt(DateTime.now().minus({ days: 3 }).ts / 1_000) })
 	series.value = dataSeries
 	appStore.currentPrice = series.value[0]
 	price.value = parseFloat(series.value[0].close)
 
 	const prevDayClosePrice = parseFloat(series.value[1].close)
 	price.diff = (Math.abs(prevDayClosePrice - price.value) / ((prevDayClosePrice + price.value) / 2)) * 100
-	let side = 'stay'
+	let side = "stay"
 	if (price.value - prevDayClosePrice !== 0) {
-		side = price.value - prevDayClosePrice > 0 ? 'rise' : 'fall'
+		side = price.value - prevDayClosePrice > 0 ? "rise" : "fall"
 	}
 	price.side = side
 })
@@ -75,7 +75,7 @@ onMounted(async () => {
 							<Text size="12" weight="500" color="tertiary" noWrap :class="$style.key">Total Supply:</Text>
 
 							<Text v-if="head" size="12" weight="600" noWrap :class="$style.value">
-								{{ abbreviate(totalSupply, 2) }} TIA
+								{{ abbreviate(totalSupply, 2) }} SLF
 							</Text>
 							<Skeleton v-else w="55" h="12" />
 						</Flex>
@@ -111,7 +111,7 @@ onMounted(async () => {
 							<Text size="12" weight="500" color="tertiary" noWrap :class="$style.key">Total Fees:</Text>
 
 							<Text v-if="head" size="12" weight="600" noWrap :class="$style.value">
-								{{ abbreviate(parseInt(totalFees)) }} TIA
+								{{ abbreviate(parseInt(totalFees)) }} SLF
 							</Text>
 							<Skeleton v-else w="55" h="12" />
 						</Flex>
@@ -126,7 +126,7 @@ onMounted(async () => {
 					<Icon name="coin" size="12" color="secondary" :class="$style.icon" />
 
 					<Flex align="center" gap="4">
-						<Text size="12" weight="500" color="tertiary" noWrap :class="$style.key">TIA:</Text>
+						<Text size="12" weight="500" color="tertiary" noWrap :class="$style.key">SLF:</Text>
 
 						<Text v-if="price.value" size="12" weight="600" noWrap :class="$style.value"> ${{ price.value.toFixed(2) }} </Text>
 						<Skeleton v-else w="36" h="12" />

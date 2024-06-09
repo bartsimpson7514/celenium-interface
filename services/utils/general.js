@@ -41,6 +41,14 @@ export const shortHex = (hex) => {
 export const splitAddress = (address, format = "string") => {
 	if (!address) return
 
+	// For selfchain
+	// if (address.startsWith("selfvaloper")) {
+	// 	return format === "array" ? [`selfvaloper`, address.slice(-4)] : `selfvaloper ••• ${address.slice(-4)}`
+	// } else if (address.startsWith("selfchainvalcons")) {
+	// 	return format === "array" ? [`selfchainvalcons`, address.slice(-4)] : `selfchainvalcons ••• ${address.slice(-4)}`
+	// }
+
+	//For Celestia
 	if (address.startsWith("celestiavaloper")) {
 		return format === "array" ? [`celestiavaloper`, address.slice(-4)] : `celestiavaloper ••• ${address.slice(-4)}`
 	} else if (address.startsWith("celestiavalcons")) {

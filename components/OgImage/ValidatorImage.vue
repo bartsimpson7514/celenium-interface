@@ -42,7 +42,7 @@ const bgStyles = computed(() => {
 
 			<div :style="{ display: 'flex', gap: '12px' }">
 				<span :style="{ fontSize: '40px', color: 'rgba(255,255,255, 0.3)' }">Voting Power: </span>
-				<span :style="{ fontSize: '40px', color: 'rgba(255,255,255, 0.6)' }">{{ abbreviate(validator.voting_power) }} TIA</span>
+				<span :style="{ fontSize: '40px', color: 'rgba(255,255,255, 0.6)' }">{{ abbreviate(validator.voting_power) }} SLF</span>
 			</div>
 		</div>
 		<div :style="{ display: 'flex', flexDirection: 'column', gap: '24px' }">

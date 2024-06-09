@@ -18,10 +18,10 @@ const minValue = ref(0)
 const maxValue = ref(0)
 
 const calculateOpacity = (val) => {
-	const normalizedValue = (val - minValue.value) / (maxValue.value - minValue.value);
-	const opacity = 0.2 + normalizedValue * 0.8;
+	const normalizedValue = (val - minValue.value) / (maxValue.value - minValue.value)
+	const opacity = 0.2 + normalizedValue * 0.8
 
-	return opacity;
+	return opacity
 }
 
 onMounted(async () => {
@@ -52,7 +52,7 @@ onMounted(async () => {
 	})
 
 	Object.keys(seriesByDay.value).forEach((d) => {
-		seriesByDay.value[d].reverse();
+		seriesByDay.value[d].reverse()
 		if (seriesByDay.value[d].length !== 24) {
 			while (seriesByDay.value[d].length !== 24) {
 				seriesByDay.value[d].push({
@@ -99,11 +99,13 @@ onMounted(async () => {
 								<Flex direction="column" gap="8">
 									<Flex align="center" gap="12" justify="between" wide>
 										<Text color="secondary">Gas Price</Text>
-										<Text color="primary">{{ parseFloat(hour.value).toFixed(4) }} UTIA</Text>
+										<Text color="primary">{{ parseFloat(hour.value).toFixed(4) }} USLF</Text>
 									</Flex>
 									<Flex align="center" gap="12" justify="between" wide>
 										<Text color="secondary">Time</Text>
-										<Text color="primary">{{ DateTime.fromISO(hour.time).setLocale("en").toFormat("LLL d, yyyy, H:mm") }}</Text>
+										<Text color="primary">{{
+											DateTime.fromISO(hour.time).setLocale("en").toFormat("LLL d, yyyy, H:mm")
+										}}</Text>
 									</Flex>
 								</Flex>
 							</template>

@@ -108,7 +108,7 @@ onMounted(() => {
 						<Text size="12" weight="600" color="tertiary"> Total Supply </Text>
 
 						<Tooltip side="top" position="end">
-							<Text size="12" weight="600" color="secondary"> {{ abbreviate(totalSupply, 2) }} TIA </Text>
+							<Text size="12" weight="600" color="secondary"> {{ abbreviate(totalSupply, 2) }} SLF </Text>
 
 							<template #content>
 								<Text size="12" weight="600" color="secondary"> {{ abbreviate(totalSupplyUSD, 2) }} USD </Text>
@@ -120,7 +120,7 @@ onMounted(() => {
 						<Text size="12" weight="600" color="tertiary"> Bonded </Text>
 
 						<Tooltip side="top" position="end">
-							<Text size="12" weight="600" color="secondary"> {{ abbreviate(totalVotingPower) }} TIA </Text>
+							<Text size="12" weight="600" color="secondary"> {{ abbreviate(totalVotingPower) }} SLF </Text>
 
 							<template #content>
 								<Text size="12" weight="600" color="secondary"> {{ abbreviate(totalVotingPowerUSD, 2) }} USD </Text>

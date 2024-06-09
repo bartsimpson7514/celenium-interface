@@ -3,7 +3,7 @@
 import ValidatorOverview from "@/components/modules/validator/ValidatorOverview.vue"
 
 /** API */
-import { fetchValidatorByID } from "@/services/api/validator";
+import { fetchValidatorByID } from "@/services/api/validator"
 
 /** UI */
 import Button from "@/components/ui/Button.vue"
@@ -33,7 +33,7 @@ defineOgImage({
 })
 
 useHead({
-	title: `Validator ${validator.value?.moniker} - Celestia Explorer`,
+	title: `Validator ${validator.value?.moniker} - Selfchain Explorer`,
 	link: [
 		{
 			rel: "canonical",
@@ -47,7 +47,7 @@ useHead({
 		},
 		{
 			property: "og:title",
-			content: `Validator ${validator.value?.moniker} - Celestia Explorer`,
+			content: `Validator ${validator.value?.moniker} - Selfchain Explorer`,
 		},
 		{
 			property: "og:description",
@@ -63,7 +63,7 @@ useHead({
 		},
 		{
 			name: "twitter:title",
-			content: `Validator ${validator.value?.moniker} - Celestia Explorer`,
+			content: `Validator ${validator.value?.moniker} - Selfchain Explorer`,
 		},
 		{
 			name: "twitter:description",

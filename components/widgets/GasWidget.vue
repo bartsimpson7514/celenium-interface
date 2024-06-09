@@ -33,7 +33,7 @@ onMounted(async () => {
 						<Text color="tertiary" height="140">
 							Each gas price level is the percentage of transactions in which gas price was set below a specified value</Text
 						>
-						<Text color="tertiary">Values in UTIA</Text>
+						<Text color="tertiary">Values in USLF</Text>
 					</Flex>
 				</template>
 			</Tooltip>
@@ -41,16 +41,16 @@ onMounted(async () => {
 
 		<Flex align="center" justify="between" wide :class="$style.bars">
 			<Flex align="center" gap="4" :class="[$style.bar, $style.fast]">
-				<Icon name="gas_fast" size="14" color="green" />
-				<Skeleton v-if="!gasPrice.fast" w="34" h="12" c="green" />
-				<Text v-else size="12" weight="600" color="green">
+				<Icon name="gas_fast" size="14" color="pale-purple" />
+				<Skeleton v-if="!gasPrice.fast" w="34" h="12" c="pale-purple-medium" />
+				<Text v-else size="12" weight="600" color="pale-purple">
 					{{
 						Number(gasPrice.fast)
 							.toFixed(3)
 							.replace(/\.?0*$/, "")
 					}}
 				</Text>
-				<Text size="12" weight="600" color="green"> Fast</Text>
+				<Text size="12" weight="600" color="pale-purple"> Fast</Text>
 			</Flex>
 
 			<Flex align="center" gap="4" :class="[$style.bar, $style.medium]">
@@ -119,8 +119,8 @@ onMounted(async () => {
 	padding: 0 12px;
 
 	&.fast {
-		background: linear-gradient(rgba(10, 219, 111, 25%), rgba(10, 219, 111, 10%));
-		box-shadow: inset 0 0 0 1px rgba(10, 219, 111, 50%);
+		background: linear-gradient(rgba(108, 17, 255, 25%), rgba(108, 17, 255, 10%));
+		box-shadow: inset 0 0 0 1px rgba(108, 17, 255, 50%);
 	}
 
 	&.medium {

@@ -175,7 +175,7 @@ const handleClose = () => {
 						<Text size="13" weight="500" color="tertiary"> Amount: </Text>
 
 						<Text size="13" weight="600" color="secondary">
-							{{ cacheStore.tx.amount }} TIA
+							{{ cacheStore.tx.amount }} SLF
 							<Text color="tertiary">
 								~${{ (cacheStore.tx.amount * parseFloat(appStore.currentPrice.close)).toFixed(2) }}
 							</Text>
@@ -195,7 +195,7 @@ const handleClose = () => {
 
 						<Flex align="center" gap="6">
 							<Text size="13" weight="600" color="secondary">
-								celestia
+								selfchain
 								<Text color="tertiary">...</Text>
 								{{ cacheStore.tx.from.slice(-4) }}
 							</Text>
@@ -208,7 +208,7 @@ const handleClose = () => {
 
 						<Flex align="center" gap="6">
 							<Text size="13" weight="600" color="secondary">
-								celestia
+								selfchain
 								<Text color="tertiary">...</Text>
 								{{ cacheStore.tx.to.slice(-4) }}
 							</Text>

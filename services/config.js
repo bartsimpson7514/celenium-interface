@@ -4,6 +4,7 @@ export const Server = {
 		mocha: "https://api-mocha-4.celenium.io/v1",
 		arabica: "https://api-arabica-11.celenium.io/v1",
 		dev: "https://api-dev.celenium.io/v1",
+		self: "http://18.116.231.219:26657",
 	},
 	WSS: {
 		mainnet: "wss://api.celenium.io/v1/ws",
@@ -14,7 +15,7 @@ export const Server = {
 	BLOBSTREAM: {
 		mainnet: "https://api-blobstream.celenium.io/v1",
 		testnet: "https://api-blobstream-testnet.celenium.io/v1",
-	}
+	},
 }
 
 export const useServerURL = () => {

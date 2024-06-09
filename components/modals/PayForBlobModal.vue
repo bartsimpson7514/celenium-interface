@@ -194,7 +194,7 @@ const handleContinue = async () => {
 	const stdFee = {
 		amount: [
 			{
-				denom: "utia",
+				denom: "uslf",
 				amount: fee,
 			},
 		],
@@ -271,7 +271,7 @@ const handleContinue = async () => {
 
 					<Flex direction="column" gap="6" :class="$style.metadata">
 						<Text size="14" weight="600" color="primary">
-							{{ appStore.balance }} TIA
+							{{ appStore.balance }} SLF
 							<Text size="13" weight="500" color="secondary">
 								${{ (appStore.balance * parseFloat(appStore.currentPrice.close)).toFixed(2) }}
 							</Text>
@@ -473,7 +473,7 @@ const handleContinue = async () => {
 }
 
 .divider {
-	width: fill-available;
+	width: stretch;
 	height: 2px;
 
 	background: var(--op-5);
