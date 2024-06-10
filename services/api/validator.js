@@ -37,10 +37,11 @@ export const fetchValidatorsCount = async () => {
 
 export const fetchValidatorByID = async (id) => {
 	try {
-		const url = new URL(`${useServerURL()}/validators/${id}`)
+		// const url = new URL(`${useServerURL()}/validators/${id}`)
+		const url = new URL(`http://18.116.231.219:26657/validators/${id}`)
 
 		const data = await useFetch(encodeURI(url.href))
-		console.log("fetchValidatorByID: ", data)
+		// console.log("fetchValidatorByID: ", data)
 
 		return data
 	} catch (error) {
@@ -65,7 +66,8 @@ export const fetchValidatorBlocks = async ({ id, limit, offset }) => {
 
 export const fetchValidatorDelegators = async ({ id, limit, offset }) => {
 	try {
-		const url = new URL(`${useServerURL()}/validators/${id}/delegators`)
+		// const url = new URL(`${useServerURL()}/validators/${id}/delegators`)
+		const url = new URL(`http://18.116.231.219:26657/validators/${id}/delegators/`)
 
 		if (limit) url.searchParams.append("limit", limit)
 		if (offset) url.searchParams.append("offset", offset)

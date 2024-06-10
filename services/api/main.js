@@ -3,7 +3,8 @@ import { useServerURL } from "@/services/config"
 
 export const fetchHead = async () => {
 	try {
-		const data = await $fetch(`${useServerURL()}/head`)
+		const url = new URL(`http://18.116.231.219:26657/head/`)
+		const data = await $fetch(url)
 		return data
 	} catch (error) {
 		console.error(error)
@@ -12,7 +13,8 @@ export const fetchHead = async () => {
 
 export const fetchConstants = async () => {
 	try {
-		const data = await $fetch(`${useServerURL()}/constants`)
+		const url = new URL(`http://18.116.231.219:26657/constants/`)
+		const data = await $fetch(url)
 		return data
 	} catch (error) {
 		console.error(error)
