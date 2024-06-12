@@ -309,7 +309,7 @@ watch(
 						<Flex align="center" justify="between">
 							<Text size="12" weight="600" color="tertiary">Voting Power</Text>
 							<AmountInCurrency
-								:amount="{ value: validator.voting_power, unit: 'TIA' }"
+								:amount="{ value: validator.voting_power, unit: 'utia' }"
 								:styles="{ amount: { color: 'tertiary' } }"
 							/>
 						</Flex>
