@@ -1,10 +1,10 @@
 export const Server = {
 	API: {
-		mainnet: "https://api.celenium.io/v1",
-		mocha: "https://api-mocha-4.celenium.io/v1",
-		arabica: "https://api-arabica-11.celenium.io/v1",
-		dev: "https://api-dev.celenium.io/v1",
-		self: "http://18.116.231.219:26657",
+		mainnet: "http://127.0.0.1:9876/v1",
+		mocha: "http://127.0.0.1:9876/v1",
+		arabica: "http://127.0.0.1:9876/v1",
+		dev: "http://127.0.0.1:9876/v1",
+		self: "http://127.0.0.1:9876/",
 	},
 	WSS: {
 		mainnet: "wss://api.celenium.io/v1/ws",
@@ -22,19 +22,19 @@ export const useServerURL = () => {
 	const requestURL = useRequestURL()
 
 	switch (requestURL.hostname) {
-		case "celenium.io":
+		case "http://127.0.0.1:9876/":
 			return Server.API.mainnet
 
-		case "mocha-4.celenium.io":
+		case "http://127.0.0.1:9876/":
 			return Server.API.mocha
 
-		case "mocha.celenium.io":
+		case "http://127.0.0.1:9876/":
 			return Server.API.mocha
 
-		case "arabica.celenium.io":
+		case "http://127.0.0.1:9876/":
 			return Server.API.arabica
 
-		case "dev.celenium.io":
+		case "http://127.0.0.1:9876/":
 			return Server.API.dev
 
 		default:
@@ -70,13 +70,13 @@ export const useBlobstreamURL = () => {
 	const requestURL = useRequestURL()
 
 	switch (requestURL.hostname) {
-		case "mocha-4.celenium.io":
+		case "http://127.0.0.1:9876/":
 			return Server.BLOBSTREAM.testnet
 
-		case "mocha.celenium.io":
+		case "http://127.0.0.1:9876/":
 			return Server.BLOBSTREAM.testnet
 
-		case "arabica.celenium.io":
+		case "http://127.0.0.1:9876/":
 			return Server.BLOBSTREAM.testnet
 
 		default:
