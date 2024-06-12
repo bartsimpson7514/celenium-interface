@@ -34,6 +34,11 @@ switch (hostname) {
 		appStore.network = mainnet
 		break
 
+	case "selfchain.xyz":
+	case "dev.selfchain.xyz":
+		appStore.network = mainnet
+		break
+
 	case "arabica.celenium.io":
 	case "localhost":
 		appStore.network = arabica
@@ -159,11 +164,11 @@ const handleDisconnect = () => {
 	<Dropdown v-else>
 		<Button type="secondary" size="small">
 			<Icon name="address" size="14" color="primary" />
-			{{ appStore.balance }} TIA
+			{{ appStore.balance }} SLF
 		</Button>
 
 		<template #popup>
-			<DropdownItem @click="modalsStore.open('send')">Send TIA</DropdownItem>
+			<DropdownItem @click="modalsStore.open('send')">Send SLF</DropdownItem>
 			<DropdownItem @click="modalsStore.open('pfb')">Submit Blob</DropdownItem>
 			<DropdownDivider />
 			<DropdownItem @click="router.push(`/address/${appStore.address}`)">

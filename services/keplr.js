@@ -51,7 +51,7 @@ export const sendPayForBlob = async (network, sender, proto, fee, blob) => {
 	const tx = TxBody.encode(
 		TxBody.fromPartial({
 			messages: proto,
-			memo: "Sent via Celenium.io",
+			memo: "Sent via Selfchain.xyz",
 		}),
 	).finish()
 
@@ -174,7 +174,7 @@ export const sendMsgs = async (network, sender, proto, fee) => {
 	const tx = TxBody.encode(
 		TxBody.fromPartial({
 			messages: proto,
-			memo: "Sent via Celenium.io",
+			memo: "Sent via Selfchain.io",
 		}),
 	).finish()
 

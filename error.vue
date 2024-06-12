@@ -76,10 +76,10 @@ const getGithubIssueLink = computed(() => {
 				</Button>
 
 				<Text size="12" weight="500" color="tertiary">or</Text>
-				<Button :link="getGithubIssueLink" target="_blank" type="secondary" size="small" style="width: fit-content">
+				<!-- <Button :link="getGithubIssueLink" target="_blank" type="secondary" size="small" style="width: fit-content">
 					<Icon name="github" size="12" color="secondary" />
 					Create Issue
-				</Button>
+				</Button> -->
 			</Flex>
 		</Flex>
 

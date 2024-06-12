@@ -16,11 +16,11 @@ import { formatBytes, comma, shareOfTotalString } from "@/services/utils"
 import { fetchRollups, fetchRollupsCount } from "@/services/api/rollup"
 
 useHead({
-	title: "Rollups - Celestia Explorer",
+	title: "Rollups - Selfchain Explorer",
 	link: [
 		{
 			rel: "canonical",
-			href: "https://celenium.io/rollups",
+			href: "https://selfchain.xyz/rollups",
 		},
 	],
 	meta: [
@@ -30,7 +30,7 @@ useHead({
 		},
 		{
 			property: "og:title",
-			content: "Rollups Leaderboard - Celestia Explorer",
+			content: "Rollups Leaderboard - Selfchain Explorer",
 		},
 		{
 			property: "og:description",
@@ -38,7 +38,7 @@ useHead({
 		},
 		{
 			property: "og:url",
-			content: `https://celenium.io/rollups`,
+			content: `https://selfchain.xyz/rollups`,
 		},
 		{
 			property: "og:image",
@@ -46,7 +46,7 @@ useHead({
 		},
 		{
 			name: "twitter:title",
-			content: "Rollups Leaderboard - Celestia Explorer",
+			content: "Rollups Leaderboard - Selfchain Explorer",
 		},
 		{
 			name: "twitter:description",
@@ -58,7 +58,7 @@ useHead({
 		},
 		{
 			name: "twitter:image",
-			content: "https://celenium.io/img/seo/rollups.png",
+			content: "https://selfchain.xyz/img/seo/rollups.png",
 		},
 	],
 })
@@ -70,17 +70,21 @@ const isRefetching = ref(false)
 const rollups = ref([])
 const count = ref(0)
 
-const totalSize = computed(() => rollups.value.reduce((acc, rollup) => {
-	return acc + rollup.size
-}, 0))
+const totalSize = computed(() =>
+	rollups.value.reduce((acc, rollup) => {
+		return acc + rollup.size
+	}, 0),
+)
 
-const totalFee = computed(() => rollups.value.reduce((acc, rollup) => {
-	return acc + (+rollup.fee)
-}, 0))
+const totalFee = computed(() =>
+	rollups.value.reduce((acc, rollup) => {
+		return acc + +rollup.fee
+	}, 0),
+)
 
 const utiaPerMB = (rollup) => {
 	let totalRollupMB = rollup.size / (1024 * 1024)
-	
+
 	return rollup.fee / totalRollupMB
 }
 
@@ -153,7 +157,6 @@ const handleNext = () => {
 
 	page.value += 1
 }
-
 </script>
 
 <template>
@@ -201,7 +204,7 @@ const handleNext = () => {
 			</Flex>
 
 			<Flex direction="column" gap="16" wide :class="[$style.table, isRefetching && $style.disabled]">
-				<div v-if="rollups.length"  :class="$style.table_scroller">
+				<div v-if="rollups.length" :class="$style.table_scroller">
 					<table>
 						<thead>
 							<tr>
@@ -287,7 +290,7 @@ const handleNext = () => {
 											<Text size="12" weight="600" color="primary">
 												{{ DateTime.fromISO(r.last_message_time).toRelative({ locale: "en", style: "short" }) }}
 											</Text>
-											
+
 											<Text size="12" weight="500" color="tertiary">
 												{{ DateTime.fromISO(r.last_message_time).setLocale("en").toFormat("LLL d, t") }}
 											</Text>
@@ -301,14 +304,18 @@ const handleNext = () => {
 												<Flex direction="column" gap="4">
 													<Text size="13" weight="600" color="primary">{{ formatBytes(r.size) }}</Text>
 
-													<Text size="12" weight="600" color="tertiary">{{ shareOfTotalString(r.size, totalSize) }}%</Text>
+													<Text size="12" weight="600" color="tertiary"
+														>{{ shareOfTotalString(r.size, totalSize) }}%</Text
+													>
 												</Flex>
 
 												<template #content>
 													<Flex align="end" gap="8">
 														<Text size="12" weight="600" color="tertiary">Share of total size</Text>
 
-														<Text size="12" weight="600" color="primary">{{ shareOfTotalString(r.size, totalSize) }}%</Text>
+														<Text size="12" weight="600" color="primary"
+															>{{ shareOfTotalString(r.size, totalSize) }}%</Text
+														>
 													</Flex>
 												</template>
 											</Tooltip>
@@ -328,13 +335,17 @@ const handleNext = () => {
 											<AmountInCurrency :amount="{ value: r.fee }" />
 
 											<Tooltip position="start" delay="400">
-												<Text size="12" weight="600" color="tertiary">{{ shareOfTotalString(r.fee, totalFee) }}%</Text>
+												<Text size="12" weight="600" color="tertiary"
+													>{{ shareOfTotalString(r.fee, totalFee) }}%</Text
+												>
 
 												<template #content>
 													<Flex align="end" gap="8">
 														<Text size="12" weight="600" color="tertiary">Share of total fee</Text>
 
-														<Text size="12" weight="600" color="primary">{{ shareOfTotalString(r.fee, totalFee) }}%</Text>
+														<Text size="12" weight="600" color="primary"
+															>{{ shareOfTotalString(r.fee, totalFee) }}%</Text
+														>
 													</Flex>
 												</template>
 											</Tooltip>

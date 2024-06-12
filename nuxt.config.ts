@@ -5,7 +5,7 @@ export default defineNuxtConfig({
 	modules: ["nuxt-simple-sitemap", "@pinia/nuxt", "nuxt-og-image"],
 
 	site: {
-		url: "https://celenium.io",
+		url: "https://selfchain.xyz",
 	},
 
 	sitemap: {

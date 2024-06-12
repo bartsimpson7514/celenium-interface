@@ -1,7 +1,7 @@
 ### Official Deployment
 
--   Production: [celenium.io](https://celenium.io)
--   Development: [dev.celenium.io](https://dev.celenium.io)
+-   Production: [selfchain.xyz](https://selfchain.xyz)
+-   Development: [dev.selfchain.xyz](https://dev.selfchain.xyz)
 
 ### Local Setup
 

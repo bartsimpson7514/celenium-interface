@@ -11,11 +11,11 @@ import { comma, tia } from "@/services/utils"
 import { fetchAddresses, fetchAddressesCount } from "@/services/api/address"
 
 useHead({
-	title: "Addresses - Celestia Explorer",
+	title: "Addresses - Selfchain Explorer",
 	link: [
 		{
 			rel: "canonical",
-			href: "https://celenium.io/addresses",
+			href: "https://selfchain.xyz/addresses",
 		},
 	],
 	meta: [
@@ -25,7 +25,7 @@ useHead({
 		},
 		{
 			property: "og:title",
-			content: "Addresses - Celestia Explorer",
+			content: "Addresses - Selfchain Explorer",
 		},
 		{
 			property: "og:description",
@@ -33,7 +33,7 @@ useHead({
 		},
 		{
 			property: "og:url",
-			content: `https://celenium.io/addresses`,
+			content: `https://selfchain.xyz/addresses`,
 		},
 		{
 			property: "og:image",
@@ -41,7 +41,7 @@ useHead({
 		},
 		{
 			name: "twitter:title",
-			content: "Addresses - Celestia Explorer",
+			content: "Addresses - Selfchain Explorer",
 		},
 		{
 			name: "twitter:description",
@@ -53,7 +53,7 @@ useHead({
 		},
 		{
 			name: "twitter:image",
-			content: "https://celenium.io/img/seo/addresses.png",
+			content: "https://selfchain.xyz/img/seo/addresses.png",
 		},
 	],
 })
@@ -192,7 +192,10 @@ const handleLast = async () => {
 								</td>
 								<td>
 									<NuxtLink :to="`/address/${address.hash}`">
-										<AmountInCurrency :amount="{ value: calculateTotalBalance(address) }" :styles=" {amount: { size: '13' }, currency: { size: '13' } }" />
+										<AmountInCurrency
+											:amount="{ value: calculateTotalBalance(address) }"
+											:styles="{ amount: { size: '13' }, currency: { size: '13' } }"
+										/>
 									</NuxtLink>
 								</td>
 								<td>

@@ -20,31 +20,31 @@ definePageMeta({
 })
 
 useHead({
-	title: "Celenium - Celestia Explorer",
+	title: "Selfchain - Explorer",
 	link: [
 		{
 			rel: "canonical",
-			href: "https://celenium.io/",
+			href: "https://selfchain.xyz/",
 		},
 	],
 	meta: [
 		{
 			name: "description",
 			content:
-				"Celenium allows you to explore and search the Celestia blockchain for transactions, addresses, blocks, namespaces and blobs.",
+				"Selfchain allows you to explore and search the Celestia blockchain for transactions, addresses, blocks, namespaces and blobs.",
 		},
 		{
 			property: "og:title",
-			content: "Celenium - Celestia Explorer",
+			content: "Selfchain - Explorer",
 		},
 		{
 			property: "og:description",
 			content:
-				"Celenium allows you to explore and search the Celestia blockchain for transactions, addresses, blocks, namespaces and blobs.",
+				"Selfchain allows you to explore and search the Celestia blockchain for transactions, addresses, blocks, namespaces and blobs.",
 		},
 		{
 			property: "og:url",
-			content: `https://celenium.io/`,
+			content: `https://selfchain.xyz/`,
 		},
 		{
 			property: "og:image",
@@ -52,12 +52,12 @@ useHead({
 		},
 		{
 			name: "twitter:title",
-			content: "Celenium - Celestia Explorer",
+			content: "Selfchain - Explorer",
 		},
 		{
 			name: "twitter:description",
 			content:
-				"Celenium allows you to explore and search the Celestia blockchain for transactions, addresses, blocks, namespaces and blobs.",
+				"Selfchain allows you to explore and search the Celestia blockchain for transactions, addresses, blocks, namespaces and blobs.",
 		},
 		{
 			name: "twitter:card",
@@ -65,7 +65,7 @@ useHead({
 		},
 		{
 			name: "twitter:image",
-			content: "https://celenium.io/img/seo/main.png",
+			content: "https://selfchain.xyz/img/seo/main.png",
 		},
 	],
 })
