@@ -201,8 +201,10 @@ watch(
 			amp.log("showSendModal")
 
 			if (!appStore.address?.length) {
-				warningBannerText.value = "Keplr wallet connection is required to send TIA."
+				warningBannerText.value = "Keplr wallet connection is required to send SLF."
 			} else if (hostname !== "celenium.io") {
+				warningBannerText.value = `You are currently on ${hostname}. The transaction will be performed on the test network.`
+			} else if (hostname !== "selfchain.xyz") {
 				warningBannerText.value = `You are currently on ${hostname}. The transaction will be performed on the test network.`
 			} else {
 				warningBannerText.value = ``
@@ -370,7 +372,7 @@ const handleContinue = async () => {
 
 					<Flex direction="column" gap="6" :class="$style.metadata">
 						<Text size="14" weight="600" color="primary">
-							{{ appStore.balance }} TIA
+							{{ appStore.balance }} SLF
 							<Text size="13" weight="500" color="secondary">
 								${{ (appStore.balance * parseFloat(appStore.currentPrice.close)).toFixed(2) }}
 							</Text>
@@ -379,7 +381,7 @@ const handleContinue = async () => {
 						<Text v-if="appStore.address" size="12" weight="500" color="tertiary" :selectable="true">
 							{{ appStore.address }}
 						</Text>
-						<Text v-else size="12" weight="500" color="yellow" :selectable="true"> Connect with your wallet to send TIA </Text>
+						<Text v-else size="12" weight="500" color="yellow" :selectable="true"> Connect with your wallet to send SLF </Text>
 					</Flex>
 
 					<div :class="[$style.auth_line, appStore.address && $style.anim]" />
@@ -407,7 +409,7 @@ const handleContinue = async () => {
 						label="Amount"
 						placeholder="0.00"
 						ref="inputEl"
-						suffix="TIA"
+						suffix="SLF"
 						autofocus
 						disable-paste
 						:disabled="!appStore.address?.length"
@@ -670,7 +672,7 @@ const handleContinue = async () => {
 }
 
 .divider {
-	width: fill-available;
+	width: stretch;
 	height: 2px;
 
 	background: var(--op-5);

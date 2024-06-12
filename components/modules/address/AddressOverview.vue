@@ -651,7 +651,7 @@ const handleOpenQRModal = () => {
 									:amount="{ value: totalBalance }"
 									:styles="{ amount: { size: '13' }, currency: { size: '13', color: 'primary' } }"
 								/>
-								<!-- <Text size="13" weight="600" color="primary" selectable>{{ tia(totalBalance).toLocaleString('en-US') }} TIA</Text> -->
+								<!-- <Text size="13" weight="600" color="primary" selectable>{{ tia(totalBalance).toLocaleString('en-US') }} SLF</Text> -->
 							</Flex>
 
 							<Icon

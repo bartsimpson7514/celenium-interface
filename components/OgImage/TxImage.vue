@@ -82,7 +82,7 @@ const messages = computed(() => [...new Set(props.tx.message_types)])
 				<div :style="{ display: 'flex', gap: '12px' }">
 					<span :style="{ fontSize: '40px', color: 'rgba(255,255,255, 0.3)' }">Fee: </span>
 					<span :style="{ fontSize: '40px', color: 'rgba(255,255,255, 0.6)' }">{{ tia(tx.fee) }} </span>
-					<span :style="{ fontSize: '40px', color: 'rgba(255,255,255, 0.3)' }">TIA</span>
+					<span :style="{ fontSize: '40px', color: 'rgba(255,255,255, 0.3)' }">SLF</span>
 				</div>
 				<div :style="{ display: 'flex', gap: '12px' }">
 					<span :style="{ fontSize: '40px', color: 'rgba(255,255,255, 0.3)' }">Block: </span>

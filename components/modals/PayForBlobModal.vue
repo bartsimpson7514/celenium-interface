@@ -80,6 +80,8 @@ watch(
 				warningBannerText.value = "Keplr wallet connection is required to submit a blob."
 			} else if (hostname !== "celenium.io") {
 				warningBannerText.value = `You are currently on ${hostname}. The transaction will be performed on the test network.`
+			} else if (hostname !== "selfchain.xyz") {
+				warningBannerText.value = `You are currently on ${hostname}. The transaction will be performed on the test network.`
 			} else {
 				warningBannerText.value = ""
 			}

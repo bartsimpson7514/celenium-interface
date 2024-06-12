@@ -70,7 +70,7 @@ const props = defineProps({
 							<Text size="13" weight="600" :color="parseFloat(j.burned) ? 'primary' : 'tertiary'">
 								{{ tia(j.burned) }}
 							</Text>
-							<Text size="13" weight="600" color="tertiary"> TIA </Text>
+							<Text size="13" weight="600" color="tertiary"> SLF </Text>
 						</Flex>
 					</td>
 				</tr>

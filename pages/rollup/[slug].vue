@@ -38,7 +38,7 @@ useHead({
 	link: [
 		{
 			rel: "canonical",
-			href: `https://celenium.io${route.path}`,
+			href: `https://selfchain.xyz${route.path}`,
 		},
 	],
 	meta: [
@@ -56,11 +56,11 @@ useHead({
 		},
 		{
 			property: "og:url",
-			content: `https://celenium.io${route.path}`,
+			content: `https://selfchain.xyz${route.path}`,
 		},
 		{
 			property: "og:image",
-			content: `https://celenium.io${route.path}__og_image__/og.png`,
+			content: `https://selfchain.xyz${route.path}__og_image__/og.png`,
 		},
 		{
 			name: "twitter:title",

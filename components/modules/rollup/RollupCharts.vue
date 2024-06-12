@@ -236,7 +236,8 @@ const getPfbSeries = async () => {
 
 	const blobsSeriesMap = {}
 	blobsSeriesRawData.forEach((item) => {
-		blobsSeriesMap[DateTime.fromISO(item.time).toFormat(selectedPeriod.value.timeframe === "day" ? "y-LL-dd" : "y-LL-dd-HH")] = item.value
+		blobsSeriesMap[DateTime.fromISO(item.time).toFormat(selectedPeriod.value.timeframe === "day" ? "y-LL-dd" : "y-LL-dd-HH")] =
+			item.value
 	})
 
 	for (let i = 1; i < selectedPeriod.value.value + 1; i++) {
@@ -408,7 +409,9 @@ onBeforeUnmount(() => {
 									{{ DateTime.now().minus({ hours: selectedPeriod.value }).set({ minutes: 0 }).toFormat("hh:mm a") }}
 								</Text>
 
-								<Text size="12" weight="600" color="tertiary">{{ selectedPeriod.timeframe === "day" ? "Today" : "Now" }}</Text>
+								<Text size="12" weight="600" color="tertiary">{{
+									selectedPeriod.timeframe === "day" ? "Today" : "Now"
+								}}</Text>
 							</Flex>
 						</Flex>
 
@@ -470,7 +473,8 @@ onBeforeUnmount(() => {
 								color="tertiary"
 								:style="{
 									opacity:
-										Math.round(Math.max(...pfbSeries.map((d) => d.value)) / 2) != Math.max(...pfbSeries.map((d) => d.value))
+										Math.round(Math.max(...pfbSeries.map((d) => d.value)) / 2) !=
+										Math.max(...pfbSeries.map((d) => d.value))
 											? 1
 											: 0,
 								}"
@@ -496,7 +500,9 @@ onBeforeUnmount(() => {
 									{{ DateTime.now().minus({ hours: selectedPeriod.value }).set({ minutes: 0 }).toFormat("hh:mm a") }}
 								</Text>
 
-								<Text size="12" weight="600" color="tertiary">{{ selectedPeriod.timeframe === "day" ? "Today" : "Now" }}</Text>
+								<Text size="12" weight="600" color="tertiary">{{
+									selectedPeriod.timeframe === "day" ? "Today" : "Now"
+								}}</Text>
 							</Flex>
 						</Flex>
 
@@ -549,9 +555,12 @@ onBeforeUnmount(() => {
 								color="tertiary"
 								:style="{ opacity: Math.max(...feeSeries.map((d) => d.value)) ? 1 : 0 }"
 							>
-								{{ tia(Math.max(...feeSeries.map((d) => d.value)), 0) > 1
-									? tia(Math.max(...feeSeries.map((d) => d.value)), 0)
-									: tia(Math.max(...feeSeries.map((d) => d.value)), 2) }} TIA
+								{{
+									tia(Math.max(...feeSeries.map((d) => d.value)), 0) > 1
+										? tia(Math.max(...feeSeries.map((d) => d.value)), 0)
+										: tia(Math.max(...feeSeries.map((d) => d.value)), 2)
+								}}
+								SLF
 							</Text>
 							<Skeleton v-else-if="!feeSeries.length" w="32" h="12" />
 
@@ -562,14 +571,18 @@ onBeforeUnmount(() => {
 								color="tertiary"
 								:style="{
 									opacity:
-										Math.round(Math.max(...feeSeries.map((d) => d.value)) / 2) != Math.max(...feeSeries.map((d) => d.value))
+										Math.round(Math.max(...feeSeries.map((d) => d.value)) / 2) !=
+										Math.max(...feeSeries.map((d) => d.value))
 											? 1
 											: 0,
 								}"
 							>
-								{{ tia(Math.round(Math.max(...feeSeries.map((d) => d.value)) / 2), 0) > 1
-									? tia(Math.round(Math.max(...feeSeries.map((d) => d.value)) / 2), 0)
-									: tia(Math.round(Math.max(...feeSeries.map((d) => d.value)) / 2), 2) }} TIA
+								{{
+									tia(Math.round(Math.max(...feeSeries.map((d) => d.value)) / 2), 0) > 1
+										? tia(Math.round(Math.max(...feeSeries.map((d) => d.value)) / 2), 0)
+										: tia(Math.round(Math.max(...feeSeries.map((d) => d.value)) / 2), 2)
+								}}
+								SLF
 							</Text>
 							<Skeleton v-else-if="!feeSeries.length" w="24" h="12" />
 
@@ -590,7 +603,9 @@ onBeforeUnmount(() => {
 									{{ DateTime.now().minus({ hours: selectedPeriod.value }).set({ minutes: 0 }).toFormat("hh:mm a") }}
 								</Text>
 
-								<Text size="12" weight="600" color="tertiary">{{ selectedPeriod.timeframe === "day" ? "Today" : "Now" }}</Text>
+								<Text size="12" weight="600" color="tertiary">{{
+									selectedPeriod.timeframe === "day" ? "Today" : "Now"
+								}}</Text>
 							</Flex>
 						</Flex>
 
@@ -619,7 +634,7 @@ onBeforeUnmount(() => {
 								>
 									<Flex align="center" gap="16">
 										<Text size="12" weight="600" color="secondary">Spent</Text>
-										<Text size="12" weight="600" color="primary"> {{ tia(tooltipText) }} TIA</Text>
+										<Text size="12" weight="600" color="primary"> {{ tia(tooltipText) }} SLF</Text>
 									</Flex>
 								</Flex>
 							</div>
@@ -628,7 +643,6 @@ onBeforeUnmount(() => {
 						<Flex ref="feeSeriesChartEl" :class="$style.chart" />
 					</Flex>
 				</Flex>
-				
 			</Flex>
 		</Flex>
 	</Flex>

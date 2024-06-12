@@ -60,11 +60,11 @@ const getEvents = async () => {
 	isLoading.value = true
 
 	if (props.block) {
-		events.value = await fetchBlockEvents({ 
+		events.value = await fetchBlockEvents({
 			height: props.block.height,
 			limit: 10,
 			offset: (page.value - 1) * 10,
-		}) 
+		})
 	} else if (props.tx) {
 		events.value = await fetchTxEvents({
 			hash: props.tx.hash,
@@ -78,19 +78,19 @@ const getEvents = async () => {
 
 const handlingEventType = (type) => {
 	switch (type) {
-		case 'cosmos.authz.v1beta1.EventGrant':
-			return 'grant'
+		case "cosmos.authz.v1beta1.EventGrant":
+			return "grant"
 
-		case 'cosmos.authz.v1beta1.EventRevoke':
-			return 'revoke'
-	
+		case "cosmos.authz.v1beta1.EventRevoke":
+			return "revoke"
+
 		default:
 			return type
 	}
 }
 
 const handlingEventActionType = (type) => {
-	return type.split('.').slice(-1)[0].replace('\"','')
+	return type.split(".").slice(-1)[0].replace('"', "")
 }
 
 const handleViewRawEvent = (event) => {
@@ -100,11 +100,7 @@ const handleViewRawEvent = (event) => {
 }
 
 const page = ref(1)
-const pages = computed(() => (
-	props.block
-		? Math.ceil(props.block.stats.events_count / 10)
-		: Math.ceil(props.tx.events_count / 10))
-)
+const pages = computed(() => (props.block ? Math.ceil(props.block.stats.events_count / 10) : Math.ceil(props.tx.events_count / 10)))
 const handleNext = () => {
 	if (page.value === pages.value) return
 	page.value += 1
@@ -115,7 +111,7 @@ const handlePrev = () => {
 }
 
 onMounted(() => {
-	getEvents();
+	getEvents()
 })
 
 /** Refetch events */
@@ -160,7 +156,7 @@ watch(
 						<Text size="12" weight="500" color="secondary">spent</Text>
 
 						<Text size="12" weight="500" color="primary" mono no-wrap>
-							{{ tia(event.data.amount.replace("utia", "")) }} TIA</Text
+							{{ tia(event.data.amount.replace("utia", "")) }} SLF</Text
 						>
 					</Flex>
 					<!-- Event: coin_received -->
@@ -180,7 +176,7 @@ watch(
 						<Text size="12" weight="500" color="secondary">received</Text>
 
 						<Text size="12" weight="500" color="primary" mono no-wrap>
-							{{ tia(event.data.amount.replace("utia", "")) }} TIA
+							{{ tia(event.data.amount.replace("utia", "")) }} SLF
 						</Text>
 					</Flex>
 					<!-- Event: delegate -->
@@ -222,7 +218,7 @@ watch(
 						<Text size="12" weight="500" color="secondary">sent</Text>
 
 						<Text size="12" weight="500" color="primary" mono no-wrap>
-							{{ tia(event.data.amount.replace("utia", "")) }} TIA</Text
+							{{ tia(event.data.amount.replace("utia", "")) }} SLF</Text
 						>
 
 						<Text size="12" weight="500" color="secondary">to</Text>
@@ -296,7 +292,7 @@ watch(
 							<Text size="12" weight="500" color="secondary">paid</Text>
 
 							<Text size="12" weight="500" color="primary" mono no-wrap>
-								{{ tia(event.data.fee.replace("utia", "")) }} TIA</Text
+								{{ tia(event.data.fee.replace("utia", "")) }} SLF</Text
 							>
 
 							<Text size="12" weight="500" color="secondary">fee</Text>
@@ -338,17 +334,12 @@ watch(
 						</template>
 					</Flex>
 					<!-- Event: withdraw_rewards -->
-					<Flex
-						v-else-if="event.type === 'withdraw_rewards'"
-						align="center"
-						gap="4"
-						color="secondary"
-						:class="$style.text"
-					>
+					<Flex v-else-if="event.type === 'withdraw_rewards'" align="center" gap="4" color="secondary" :class="$style.text">
 						<Text size="12" weight="500" color="secondary">Withdrawal</Text>
 
 						<Text size="12" weight="500" color="primary" mono no-wrap>
-							{{ tia(event.data.amount.replace("utia", "")) }} TIA</Text>
+							{{ tia(event.data.amount.replace("utia", "")) }} SLF</Text
+						>
 
 						<Text size="12" weight="500" color="secondary">from</Text>
 
@@ -365,17 +356,11 @@ watch(
 						</Tooltip>
 					</Flex>
 					<!-- Event: withdraw_commission -->
-					<Flex
-						v-else-if="event.type === 'withdraw_commission'"
-						align="center"
-						gap="4"
-						color="secondary"
-						:class="$style.text"
-					>
+					<Flex v-else-if="event.type === 'withdraw_commission'" align="center" gap="4" color="secondary" :class="$style.text">
 						<Text size="12" weight="500" color="secondary">Commission</Text>
 
 						<Text size="12" weight="500" color="primary" mono no-wrap>
-							{{ tia(event.data.amount.replace("utia", "")) }} TIA
+							{{ tia(event.data.amount.replace("utia", "")) }} SLF
 						</Text>
 					</Flex>
 					<!-- Event: proposer_reward -->
@@ -397,7 +382,7 @@ watch(
 						<Text size="12" weight="500" color="secondary">received rewards</Text>
 
 						<Text size="12" weight="500" color="primary" mono no-wrap>
-							{{ event.data.amount ? tia(event.data.amount.replace("utia", "")) : 0 }} TIA
+							{{ event.data.amount ? tia(event.data.amount.replace("utia", "")) : 0 }} SLF
 						</Text>
 					</Flex>
 					<!-- Event: rewards -->
@@ -419,7 +404,7 @@ watch(
 						<Text size="12" weight="500" color="secondary">received rewards</Text>
 
 						<Text size="12" weight="500" color="primary" mono no-wrap>
-							{{ event.data.amount ? tia(event.data.amount.replace("utia", "")) : 0 }} TIA
+							{{ event.data.amount ? tia(event.data.amount.replace("utia", "")) : 0 }} SLF
 						</Text>
 					</Flex>
 					<!-- Event: commission -->
@@ -439,7 +424,7 @@ watch(
 						<Text size="12" weight="500" color="secondary">received commission of</Text>
 
 						<Text size="12" weight="500" color="primary" mono no-wrap>
-							{{ event.data.amount ? tia(event.data.amount.replace("utia", "")) : 0 }} TIA
+							{{ event.data.amount ? tia(event.data.amount.replace("utia", "")) : 0 }} SLF
 						</Text>
 					</Flex>
 					<!-- Event: coinbase -->
@@ -459,13 +444,13 @@ watch(
 						<Text size="12" weight="500" color="secondary">received</Text>
 
 						<Text size="12" weight="500" color="primary" mono no-wrap>
-							{{ event.data.amount ? tia(event.data.amount.replace("utia", "")) : 0 }} TIA
+							{{ event.data.amount ? tia(event.data.amount.replace("utia", "")) : 0 }} SLF
 						</Text>
 					</Flex>
 					<!-- Event: mint -->
 					<Flex v-else-if="event.type === 'mint'" align="center" gap="4" color="secondary" :class="$style.text">
 						<Text size="12" weight="500" color="primary" mono no-wrap>
-							{{ event.data.amount ? tia(event.data.amount.replace("utia", "")) : 0 }} TIA</Text
+							{{ event.data.amount ? tia(event.data.amount.replace("utia", "")) : 0 }} SLF</Text
 						>
 
 						<Text size="12" weight="500" color="secondary">was minted</Text>
@@ -473,7 +458,7 @@ watch(
 					<!-- Event: burn -->
 					<Flex v-else-if="event.type === 'burn'" align="center" gap="4" color="secondary" :class="$style.text">
 						<Text size="12" weight="500" color="primary" mono no-wrap>
-							{{ event.data.amount ? tia(event.data.amount.replace("utia", "")) : 0 }} TIA</Text
+							{{ event.data.amount ? tia(event.data.amount.replace("utia", "")) : 0 }} SLF</Text
 						>
 
 						<Text size="12" weight="500" color="secondary">was burned</Text>
@@ -481,7 +466,7 @@ watch(
 					<!-- Event: unbond -->
 					<Flex v-else-if="event.type === 'unbond'" align="center" gap="4" color="secondary" :class="$style.text">
 						<Text size="12" weight="500" color="primary" mono no-wrap>
-							{{ event.data.amount ? tia(event.data.amount.replace("utia", "")) : 0 }} TIA</Text
+							{{ event.data.amount ? tia(event.data.amount.replace("utia", "")) : 0 }} SLF</Text
 						>
 
 						<Text size="12" weight="500" color="secondary">will unbond from</Text>
@@ -513,7 +498,7 @@ watch(
 					<!-- Event: redelegate -->
 					<Flex v-else-if="event.type === 'redelegate'" align="center" gap="4" color="secondary" :class="$style.text">
 						<Text size="12" weight="500" color="primary" mono no-wrap>
-							{{ event.data.amount ? tia(event.data.amount.replace("utia", "")) : 0 }} TIA</Text
+							{{ event.data.amount ? tia(event.data.amount.replace("utia", "")) : 0 }} SLF</Text
 						>
 
 						<Text size="12" weight="500" color="secondary">will redelegate from</Text>
@@ -559,7 +544,7 @@ watch(
 					<!-- Event: complete_unbonding -->
 					<Flex v-else-if="event.type === 'complete_unbonding'" align="center" gap="4" color="secondary" :class="$style.text">
 						<Text size="12" weight="500" color="primary" mono no-wrap>
-							{{ event.data.amount ? tia(event.data.amount.replace("utia", "")) : 0 }} TIA</Text
+							{{ event.data.amount ? tia(event.data.amount.replace("utia", "")) : 0 }} SLF</Text
 						>
 
 						<Text size="12" weight="500" color="secondary">was unbonded from</Text>
@@ -593,7 +578,7 @@ watch(
 					<!-- Event: complete_redelegation -->
 					<Flex v-else-if="event.type === 'complete_redelegation'" align="center" gap="4" color="secondary" :class="$style.text">
 						<Text size="12" weight="500" color="primary" mono no-wrap>
-							{{ event.data.amount ? tia(event.data.amount.replace("utia", "")) : 0 }} TIA</Text
+							{{ event.data.amount ? tia(event.data.amount.replace("utia", "")) : 0 }} SLF</Text
 						>
 
 						<Text size="12" weight="500" color="secondary">was redelegated from</Text>
@@ -641,9 +626,9 @@ watch(
 						<Text size="12" weight="500" color="secondary">was jailed for</Text>
 
 						<Tooltip :class="$style.tooltip">
-								<Text size="12" weight="500" color="primary" mono>
-									{{ event.data.reason }}
-								</Text>
+							<Text size="12" weight="500" color="primary" mono>
+								{{ event.data.reason }}
+							</Text>
 
 							<template #content>
 								{{ event.data.reason }}
@@ -651,11 +636,17 @@ watch(
 						</Tooltip>
 					</Flex>
 					<!-- Event: cancel_unbonding_delegation -->
-					<Flex v-else-if="event.type === 'cancel_unbonding_delegation'" align="center" gap="4" color="secondary" :class="$style.text">
+					<Flex
+						v-else-if="event.type === 'cancel_unbonding_delegation'"
+						align="center"
+						gap="4"
+						color="secondary"
+						:class="$style.text"
+					>
 						<Text size="12" weight="500" color="secondary">Unbonding</Text>
 
 						<Text size="12" weight="500" color="primary" mono no-wrap>
-							{{ event.data.amount ? tia(event.data.amount.replace("utia", "")) : 0 }} TIA</Text
+							{{ event.data.amount ? tia(event.data.amount.replace("utia", "")) : 0 }} SLF</Text
 						>
 
 						<Text size="12" weight="500" color="secondary">from</Text>
@@ -675,16 +666,22 @@ watch(
 						<Text size="12" weight="500" color="secondary">was canceled</Text>
 					</Flex>
 					<!-- Event: cosmos.authz.v1beta1.EventGrant -->
-					<Flex v-else-if="event.type === 'cosmos.authz.v1beta1.EventGrant'" align="center" gap="4" color="secondary" :class="$style.text">
+					<Flex
+						v-else-if="event.type === 'cosmos.authz.v1beta1.EventGrant'"
+						align="center"
+						gap="4"
+						color="secondary"
+						:class="$style.text"
+					>
 						<Tooltip :class="$style.tooltip">
 							<NuxtLink :to="`/address/${event.data.granter}`" @click.stop>
 								<Text size="12" weight="500" color="primary" mono>
-									{{ splitAddress(event.data.granter.replace(/"/g,'')) }}
+									{{ splitAddress(event.data.granter.replace(/"/g, "")) }}
 								</Text>
 							</NuxtLink>
 
 							<template #content>
-								{{ event.data.granter.replace(/"/g,'') }}
+								{{ event.data.granter.replace(/"/g, "") }}
 							</template>
 						</Tooltip>
 
@@ -699,26 +696,32 @@ watch(
 						<Tooltip :class="$style.tooltip">
 							<NuxtLink :to="`/address/${event.data.grantee}`" @click.stop>
 								<Text size="12" weight="500" color="primary" mono>
-									{{ splitAddress(event.data.grantee.replace(/"/g,'')) }}
+									{{ splitAddress(event.data.grantee.replace(/"/g, "")) }}
 								</Text>
 							</NuxtLink>
 
 							<template #content>
-								{{ event.data.grantee.replace(/"/g,'') }}
+								{{ event.data.grantee.replace(/"/g, "") }}
 							</template>
 						</Tooltip>
 					</Flex>
 					<!-- Event: cosmos.authz.v1beta1.EventRevoke -->
-					<Flex v-else-if="event.type === 'cosmos.authz.v1beta1.EventRevoke'" align="center" gap="4" color="secondary" :class="$style.text">
+					<Flex
+						v-else-if="event.type === 'cosmos.authz.v1beta1.EventRevoke'"
+						align="center"
+						gap="4"
+						color="secondary"
+						:class="$style.text"
+					>
 						<Tooltip :class="$style.tooltip">
 							<NuxtLink :to="`/address/${event.data.granter}`" @click.stop>
 								<Text size="12" weight="500" color="primary" mono>
-									{{ splitAddress(event.data.granter.replace(/"/g,'')) }}
+									{{ splitAddress(event.data.granter.replace(/"/g, "")) }}
 								</Text>
 							</NuxtLink>
 
 							<template #content>
-								{{ event.data.granter.replace(/"/g,'') }}
+								{{ event.data.granter.replace(/"/g, "") }}
 							</template>
 						</Tooltip>
 
@@ -733,12 +736,12 @@ watch(
 						<Tooltip :class="$style.tooltip">
 							<NuxtLink :to="`/address/${event.data.grantee}`" @click.stop>
 								<Text size="12" weight="500" color="primary" mono>
-									{{ splitAddress(event.data.grantee.replace(/"/g,'')) }}
+									{{ splitAddress(event.data.grantee.replace(/"/g, "")) }}
 								</Text>
 							</NuxtLink>
 
 							<template #content>
-								{{ event.data.grantee.replace(/"/g,'') }}
+								{{ event.data.grantee.replace(/"/g, "") }}
 							</template>
 						</Tooltip>
 					</Flex>
@@ -786,9 +789,7 @@ watch(
 
 						<Text size="12" weight="500" color="secondary">missed</Text>
 
-						<Text size="12" weight="500" color="primary" mono no-wrap>
-							{{ event.data.missed_blocks }}</Text
-						>
+						<Text size="12" weight="500" color="primary" mono no-wrap> {{ event.data.missed_blocks }}</Text>
 
 						<Text size="12" weight="500" color="secondary">blocks</Text>
 					</Flex>

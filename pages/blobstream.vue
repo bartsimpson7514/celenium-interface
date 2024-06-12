@@ -10,7 +10,7 @@ import Button from "@/components/ui/Button.vue"
 import { capitilize, comma, shortHex } from "@/services/utils"
 
 /** API */
-import { fetchNetworks, fetchCommitments, fetchCommitmentsByNetwork } from "@/services/api/blobstream";
+import { fetchNetworks, fetchCommitments, fetchCommitmentsByNetwork } from "@/services/api/blobstream"
 
 /** Store */
 import { useCacheStore } from "@/store/cache"
@@ -19,11 +19,11 @@ const cacheStore = useCacheStore()
 const modalsStore = useModalsStore()
 
 useHead({
-	title: "Blobstream - Celestia Explorer",
+	title: "Blobstream - Selfchain Explorer",
 	link: [
 		{
 			rel: "canonical",
-			href: "https://celenium.io/addresses",
+			href: "https://selfchain.xyz/addresses",
 		},
 	],
 	meta: [
@@ -33,7 +33,7 @@ useHead({
 		},
 		{
 			property: "og:title",
-			content: "Addresses - Celestia Explorer",
+			content: "Addresses - Selfchain Explorer",
 		},
 		{
 			property: "og:description",
@@ -41,7 +41,7 @@ useHead({
 		},
 		{
 			property: "og:url",
-			content: `https://celenium.io/addresses`,
+			content: `https://selfchain.xyz/addresses`,
 		},
 		{
 			property: "og:image",
@@ -49,7 +49,7 @@ useHead({
 		},
 		{
 			name: "twitter:title",
-			content: "Blobstream - Celestia Explorer",
+			content: "Blobstream - Selfchain Explorer",
 		},
 		{
 			name: "twitter:description",
@@ -61,7 +61,7 @@ useHead({
 		},
 		{
 			name: "twitter:image",
-			content: "https://celenium.io/img/seo/addresses.png",
+			content: "https://selfchain.xyz/img/seo/addresses.png",
 		},
 	],
 })
@@ -81,7 +81,7 @@ const sort = ref("desc")
 
 const getNetworks = async () => {
 	const { data } = await fetchNetworks()
-	networks.value = data.value.filter(n => n.last_height > 0)
+	networks.value = data.value.filter((n) => n.last_height > 0)
 
 	if (networks.value.length === 1) {
 		selectedNetwork.value = networks.value[0].network
@@ -109,7 +109,7 @@ const getCommitments = async () => {
 
 		commitments.value = data.value
 	}
-	
+
 	handleNextCondition.value = commitments.value?.length < limit.value
 
 	isRefetching.value = false
@@ -183,7 +183,6 @@ const handleViewCommitment = (commitment) => {
 
 getNetworks()
 getCommitments()
-
 </script>
 
 <template>
@@ -203,7 +202,12 @@ getCommitments()
 				align="center"
 				direction="column"
 				gap="12"
-				:class="[$style.card_network, selectedNetwork === n.network && $style.card_active, isRefetching && $style.disabled, networks?.length === 1 && $style.unclickable]"
+				:class="[
+					$style.card_network,
+					selectedNetwork === n.network && $style.card_active,
+					isRefetching && $style.disabled,
+					networks?.length === 1 && $style.unclickable,
+				]"
 			>
 				<Flex align="center" gap="6">
 					<Text size="13" weight="600" height="110" color="primary"> {{ capitilize(n.network) }} </Text>
@@ -211,13 +215,13 @@ getCommitments()
 
 				<Flex align="center" justify="between" wide>
 					<Text size="12" weight="600" color="tertiary">Last Height</Text>
-					
+
 					<Text size="12" weight="600" color="secondary"> {{ comma(n.last_height) }} </Text>
 				</Flex>
 
 				<Flex align="center" justify="between" wide>
 					<Text size="12" weight="600" color="tertiary">Last Hash</Text>
-					
+
 					<Text size="12" weight="600" color="secondary"> {{ shortHex(n.last_hash) }} </Text>
 				</Flex>
 			</Flex>
@@ -288,9 +292,7 @@ getCommitments()
 										<Text size="12" weight="600" color="primary">
 											{{ shortHex(c.commitment) }}
 										</Text>
-										<Text size="12" weight="500" color="tertiary">
-											nonce {{ c.proof_nonce }}
-										</Text>
+										<Text size="12" weight="500" color="tertiary"> nonce {{ c.proof_nonce }} </Text>
 									</Flex>
 								</td>
 								<td>
@@ -298,13 +300,11 @@ getCommitments()
 										<Flex align="center">
 											<Outline @click.prevent.stop="router.push(`/block/${c.celestia_start_height}`)">
 												<Flex align="center" gap="6">
-													<Icon
-														name="block"
-														size="14"
-														color="tertiary"
-													/>
+													<Icon name="block" size="14" color="tertiary" />
 
-													<Text size="13" weight="600" color="primary" tabular>{{ comma(c.celestia_start_height) }}</Text>
+													<Text size="13" weight="600" color="primary" tabular>{{
+														comma(c.celestia_start_height)
+													}}</Text>
 												</Flex>
 											</Outline>
 										</Flex>
@@ -314,13 +314,11 @@ getCommitments()
 										<Flex align="center">
 											<Outline @click.prevent.stop="router.push(`/block/${c.celestia_end_height}`)">
 												<Flex align="center" gap="6">
-													<Icon
-														name="block"
-														size="14"
-														color="tertiary"
-													/>
+													<Icon name="block" size="14" color="tertiary" />
 
-													<Text size="13" weight="600" color="primary" tabular>{{ comma(c.celestia_end_height) }}</Text>
+													<Text size="13" weight="600" color="primary" tabular>{{
+														comma(c.celestia_end_height)
+													}}</Text>
 												</Flex>
 											</Outline>
 										</Flex>
@@ -338,9 +336,7 @@ getCommitments()
 										<Text size="12" weight="600" color="primary">
 											{{ shortHex(c.l1_info.tx_hash) }}
 										</Text>
-										<Text size="12" weight="500" color="tertiary">
-											Height {{ comma(c.l1_info.height) }}
-										</Text>
+										<Text size="12" weight="500" color="tertiary"> Height {{ comma(c.l1_info.height) }} </Text>
 									</Flex>
 								</td>
 							</tr>
@@ -441,7 +437,7 @@ getCommitments()
 
 			white-space: nowrap;
 			overflow: hidden;
-      		text-overflow: ellipsis;
+			text-overflow: ellipsis;
 
 			border-right: 2px solid transparent;
 

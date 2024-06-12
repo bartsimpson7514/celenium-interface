@@ -17,7 +17,7 @@ const bookmarksStore = useBookmarksStore()
 const notificationsStore = useNotificationsStore()
 
 useHead({
-	title: `My Bookmarks - Celenium`,
+	title: `My Bookmarks - Selfchain`,
 })
 
 const cache = reactive({

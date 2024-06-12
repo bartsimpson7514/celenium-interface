@@ -14,11 +14,11 @@ import { tia, comma, space, formatBytes } from "@/services/utils"
 import { fetchBlocks, fetchBlocksCount } from "@/services/api/block"
 
 useHead({
-	title: "Blocks - Celestia Explorer",
+	title: "Blocks - Selfchain Explorer",
 	link: [
 		{
 			rel: "canonical",
-			href: "https://celenium.io/blocks",
+			href: "https://selfchain.xyz/blocks",
 		},
 	],
 	meta: [
@@ -28,7 +28,7 @@ useHead({
 		},
 		{
 			property: "og:title",
-			content: "Blocks - Celestia Explorer",
+			content: "Blocks - Selfchain Explorer",
 		},
 		{
 			property: "og:description",
@@ -36,7 +36,7 @@ useHead({
 		},
 		{
 			property: "og:url",
-			content: `https://celenium.io/blocks`,
+			content: `https://selfchain.xyz/blocks`,
 		},
 		{
 			property: "og:image",
@@ -44,7 +44,7 @@ useHead({
 		},
 		{
 			name: "twitter:title",
-			content: "Blocks - Celestia Explorer",
+			content: "Blocks - Selfchain Explorer",
 		},
 		{
 			name: "twitter:description",
@@ -56,7 +56,7 @@ useHead({
 		},
 		{
 			name: "twitter:image",
-			content: "https://celenium.io/img/seo/blocks.png",
+			content: "https://selfchain.xyz/img/seo/blocks.png",
 		},
 	],
 })
@@ -312,7 +312,10 @@ const handleLast = async () => {
 								<td>
 									<NuxtLink :to="`/block/${block.height}`">
 										<Flex align="center" gap="4">
-											<AmountInCurrency :amount="{ value: block.stats.fee, decimal: 6 }" :styles="{ amount: { size: '13' } }" />
+											<AmountInCurrency
+												:amount="{ value: block.stats.fee, decimal: 6 }"
+												:styles="{ amount: { size: '13' } }"
+											/>
 										</Flex>
 									</NuxtLink>
 								</td>

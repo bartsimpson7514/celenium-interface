@@ -21,11 +21,11 @@ import { MsgTypes } from "@/services/constants/messages"
 import { fetchTransactions } from "@/services/api/tx"
 
 useHead({
-	title: "Transactions - Celestia Explorer",
+	title: "Transactions - Selfchain Explorer",
 	link: [
 		{
 			rel: "canonical",
-			href: "https://celenium.io/transactions",
+			href: "https://selfchain.xyz/transactions",
 		},
 	],
 	meta: [
@@ -35,7 +35,7 @@ useHead({
 		},
 		{
 			property: "og:title",
-			content: "Transactions - Celestia Explorer",
+			content: "Transactions - Selfchain Explorer",
 		},
 		{
 			property: "og:description",
@@ -43,7 +43,7 @@ useHead({
 		},
 		{
 			property: "og:url",
-			content: `https://celenium.io/transactions`,
+			content: `https://selfchain.xyz/transactions`,
 		},
 		{
 			property: "og:image",
@@ -51,7 +51,7 @@ useHead({
 		},
 		{
 			name: "twitter:title",
-			content: "Transactions - Celestia Explorer",
+			content: "Transactions - Selfchain Explorer",
 		},
 		{
 			name: "twitter:description",
@@ -63,7 +63,7 @@ useHead({
 		},
 		{
 			name: "twitter:image",
-			content: "https://celenium.io/img/seo/txs.png",
+			content: "https://selfchain.xyz/img/seo/txs.png",
 		},
 	],
 })
@@ -310,7 +310,7 @@ const handleSort = (by) => {
 	}
 
 	sort.by = by
-	
+
 	if (page.value !== 1) {
 		page.value = 1
 	}
@@ -679,7 +679,10 @@ const handleNext = () => {
 								<td v-if="config.columns.fee" style="width: 1px">
 									<NuxtLink :to="`/tx/${tx.hash}`">
 										<Flex align="center">
-											<AmountInCurrency :amount="{ value: tx.fee, decimal: 6 }" :styles="{ amount: { size: '13' } }" />
+											<AmountInCurrency
+												:amount="{ value: tx.fee, decimal: 6 }"
+												:styles="{ amount: { size: '13' } }"
+											/>
 										</Flex>
 									</NuxtLink>
 								</td>

@@ -288,7 +288,7 @@ const rawNavigationActions = [
 		title: "Go to Documentation",
 		runText: "Open Documentation",
 		callback: () => {
-			window.open("https://docs.celenium.io", "_blank")
+			window.open("https://docs.selfchain.xyz", "_blank")
 		},
 	},
 ]
@@ -535,7 +535,7 @@ const rawSettingsActions = [
 				subtitle: "Network",
 				runText: "Switch to Mainnet",
 				callback: () => {
-					window.open("https://celenium.io", "_blank")
+					window.open("https://selfchain.xyz", "_blank")
 				},
 			},
 			{

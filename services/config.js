@@ -37,6 +37,9 @@ export const useServerURL = () => {
 		case "http://127.0.0.1:9876/":
 			return Server.API.dev
 
+		case "selfchain.xyz":
+			return Server.API.selfchain
+
 		default:
 			return Server.API.arabica
 	}

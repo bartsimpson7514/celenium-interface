@@ -137,3 +137,48 @@ export const mainnet = {
 	},
 	walletUrlForStaking: "https://wallet.keplr.app/chains/celestia",
 }
+
+export const selfchain = {
+	chainId: "self-1",
+	chainName: "Selfchain Mainnet",
+	rpc: "",
+	rest: "",
+	bip44: {
+		coinType: 118,
+	},
+	bech32Config: {
+		bech32PrefixAccAddr: "celestia",
+		bech32PrefixAccPub: "celestia" + "pub",
+		bech32PrefixValAddr: "celestia" + "valoper",
+		bech32PrefixValPub: "celestia" + "valoperpub",
+		bech32PrefixConsAddr: "celestia" + "valcons",
+		bech32PrefixConsPub: "celestia" + "valconspub",
+	},
+	currencies: [
+		{
+			coinDenom: "SLF",
+			coinMinimalDenom: "uslf",
+			coinDecimals: 6,
+			coinGeckoId: "selfchain",
+		},
+	],
+	feeCurrencies: [
+		{
+			coinDenom: "SLF",
+			coinMinimalDenom: "uslf",
+			coinDecimals: 6,
+			coinGeckoId: "selfchain",
+			gasPriceStep: {
+				low: 0.01,
+				average: 0.025,
+				high: 0.3,
+			},
+		},
+	],
+	stakeCurrency: {
+		coinDenom: "SLF",
+		coinMinimalDenom: "uslf",
+		coinDecimals: 6,
+		coinGeckoId: "selfchain",
+	},
+}
