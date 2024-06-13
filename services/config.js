@@ -1,10 +1,10 @@
 export const Server = {
 	API: {
-		mainnet: "http://127.0.0.1:9876/v1",
-		mocha: "http://127.0.0.1:9876/v1",
-		arabica: "http://127.0.0.1:9876/v1",
-		dev: "http://127.0.0.1:9876/v1",
-		self: "http://127.0.0.1:9876/",
+		mainnet: "https://api.gasguard.xyz/v1",
+		mocha: "https://api.gasguard.xyz/v1",
+		arabica: "https://api.gasguard.xyz/v1",
+		dev: "https://api.gasguard.xyz/v1",
+		self: "https://api.gasguard.xyz/",
 	},
 	WSS: {
 		mainnet: "wss://api.celenium.io/v1/ws",
@@ -22,19 +22,19 @@ export const useServerURL = () => {
 	const requestURL = useRequestURL()
 
 	switch (requestURL.hostname) {
-		case "http://127.0.0.1:9876/":
+		case "https://api.gasguard.xyz/":
 			return Server.API.mainnet
 
-		case "http://127.0.0.1:9876/":
+		case "https://api.gasguard.xyz/":
 			return Server.API.mocha
 
-		case "http://127.0.0.1:9876/":
+		case "https://api.gasguard.xyz/":
 			return Server.API.mocha
 
-		case "http://127.0.0.1:9876/":
+		case "https://api.gasguard.xyz/":
 			return Server.API.arabica
 
-		case "http://127.0.0.1:9876/":
+		case "https://api.gasguard.xyz/":
 			return Server.API.dev
 
 		case "selfchain.xyz":
@@ -52,7 +52,7 @@ export const useSocketURL = () => {
 		case "celenium.io":
 			return Server.WSS.mainnet
 
-		case "mocha-4.celenium.io":
+		case "mogit cha-4.celenium.io":
 			return Server.WSS.mocha
 
 		case "mocha.celenium.io":
@@ -73,13 +73,13 @@ export const useBlobstreamURL = () => {
 	const requestURL = useRequestURL()
 
 	switch (requestURL.hostname) {
-		case "http://127.0.0.1:9876/":
+		case "https://api.gasguard.xyz/":
 			return Server.BLOBSTREAM.testnet
 
-		case "http://127.0.0.1:9876/":
+		case "https://api.gasguard.xyz/":
 			return Server.BLOBSTREAM.testnet
 
-		case "http://127.0.0.1:9876/":
+		case "https://api.gasguard.xyz/":
 			return Server.BLOBSTREAM.testnet
 
 		default:
