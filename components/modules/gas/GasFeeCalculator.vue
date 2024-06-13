@@ -77,7 +77,7 @@ const gasFee = computed(() => {
 									.toFixed(4)
 									.replace(/\.?0*$/, "")
 							}}
-							<Text size="10" color="secondary">UTIA</Text>
+							<Text size="10" color="secondary">USLF</Text>
 						</Text>
 						<CopyButton :text="appStore.gas.fast" size="10" />
 					</Flex>
@@ -95,7 +95,7 @@ const gasFee = computed(() => {
 									.toFixed(4)
 									.replace(/\.?0*$/, "")
 							}}
-							<Text size="10" color="secondary">UTIA</Text>
+							<Text size="10" color="secondary">USLF</Text>
 						</Text>
 						<CopyButton :text="appStore.gas.median" size="10" />
 					</Flex>
@@ -113,7 +113,7 @@ const gasFee = computed(() => {
 									.toFixed(4)
 									.replace(/\.?0*$/, "")
 							}}
-							<Text size="10" color="secondary">UTIA</Text>
+							<Text size="10" color="secondary">USLF</Text>
 						</Text>
 						<CopyButton :text="appStore.gas.slow" size="10" />
 					</Flex>
@@ -149,7 +149,7 @@ const gasFee = computed(() => {
 
 				<Flex v-if="gasLimit && gasFee.fast" align="center" gap="6">
 					<Text size="12" weight="600" color="primary">
-						{{ comma(gasFee.fast, " ") }} <Text size="10" color="secondary">UTIA </Text></Text
+						{{ comma(gasFee.fast, " ") }} <Text size="10" color="secondary">USLF </Text></Text
 					>
 					<CopyButton :text="gasFee.fast" size="10" />
 				</Flex>
@@ -160,7 +160,7 @@ const gasFee = computed(() => {
 
 				<Flex v-if="gasLimit && gasFee.median" align="center" gap="6">
 					<Text size="12" weight="600" color="primary">
-						{{ comma(gasFee.median, " ") }} <Text size="10" color="secondary">UTIA </Text>
+						{{ comma(gasFee.median, " ") }} <Text size="10" color="secondary">USLF </Text>
 					</Text>
 					<CopyButton :text="gasFee.median" size="10" />
 				</Flex>
@@ -171,7 +171,7 @@ const gasFee = computed(() => {
 
 				<Flex v-if="gasLimit && gasFee.slow" align="center" gap="6">
 					<Text size="12" weight="600" color="primary">
-						{{ comma(gasFee.slow, " ") }} <Text size="10" color="secondary">UTIA </Text>
+						{{ comma(gasFee.slow, " ") }} <Text size="10" color="secondary">USLF </Text>
 					</Text>
 					<CopyButton :text="gasFee.slow" size="10" />
 				</Flex>

@@ -129,7 +129,7 @@ watch(
 
 		isAddressNotFound.value = false
 
-		if ((!address.value.startsWith("celestia") && address.value.length > 8) || address.value.length > 47) {
+		if ((!address.value.startsWith("slf") && address.value.length > 8) || address.value.length > 47) {
 			addressError.value = "Validation error"
 			return
 		}
@@ -139,7 +139,7 @@ watch(
 			return
 		}
 
-		if (address.value.startsWith("celestia") && address.value.length === 47) {
+		if (address.value.startsWith("slf") && address.value.length === 47) {
 			addressSuccess.value = true
 
 			const { data } = await search(address.value)
@@ -165,7 +165,7 @@ const runGasLimitEstimation = async () => {
 			toAddress: "celestia1uvm9gzwqukm97s7vsq3x6wlcm7hjfvv6u50a4t",
 			amount: [
 				{
-					denom: "utia",
+					denom: "uslf",
 					amount: DecUtils.getTenExponentN(6).mul(new Dec(1)).truncate().toString(),
 				},
 			],
@@ -176,7 +176,7 @@ const runGasLimitEstimation = async () => {
 		appStore.network,
 		"celestia15hgtsr3sezr6tl6jsf0afdh3qlgpgq48czxqpw",
 		[protoMsgs],
-		[{ denom: "utia", amount: "1" }],
+		[{ denom: "uslf", amount: "1" }],
 	)
 	estimatedGasLimit.value = parseInt(gasUsed)
 }
@@ -282,7 +282,7 @@ const handleContinue = async () => {
 				toAddress: address.value,
 				amount: [
 					{
-						denom: "utia",
+						denom: "uslf",
 						amount: DecUtils.getTenExponentN(6)
 							.mul(new Dec(parseFloat(amount.value)))
 							.truncate()
@@ -295,7 +295,7 @@ const handleContinue = async () => {
 	const stdFee = {
 		amount: [
 			{
-				denom: "utia",
+				denom: "uslf",
 				amount: 0,
 			},
 		],

@@ -99,8 +99,8 @@ export const mainnet = {
 	bip44: {
 		coinType: 118,
 	},
-	chainId: "celestia",
-	chainName: "Celestia",
+	chainId: "self-1",
+	chainName: "Self Chain",
 	chainSymbolImageUrl: "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/celestia/chain.png",
 	currencies: [
 		{

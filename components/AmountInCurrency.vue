@@ -29,11 +29,11 @@ const props = defineProps({
 	},
 })
 
-const displayCurrency = ref("TIA")
+const displayCurrency = ref("SLF")
 
 const defaultAmount = {
-	unit: "utia",
-	currency: "TIA",
+	unit: "uslf",
+	currency: "SLF",
 	decimal: 2,
 }
 
@@ -82,7 +82,7 @@ const calculatedAmount = computed(() => {
 	if (finalAmount.amount.unit === 'utia') {
 		tiaExchange = finalAmount.amount.value / 1_000_000
 
-		if (finalAmount.amount.currency === "TIA") {
+		if (finalAmount.amount.currency === "SLF") {
 			tiaDisplay = finalAmount.amount.value / 1_000_000
 		} else {
 			tiaDisplay = finalAmount.amount.value
@@ -94,7 +94,7 @@ const calculatedAmount = computed(() => {
 
 	let amountConverted = tiaExchange * (currentPrice.value?.close ? currentPrice.value.close : 0)
 
-	if (displayCurrency.value === "TIA") {
+	if (displayCurrency.value === "SLF") {
 		finalAmount.display.show = {
 			value: amountToString(tiaDisplay, finalAmount.amount.decimal),
 			currency: finalAmount.amount.currency,
